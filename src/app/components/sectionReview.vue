@@ -1,13 +1,13 @@
 <template>
   <section class="reviews">
     <div class="container">
-      <h3 class="is-heading is-orange">What Others Say</h3>
+      <h3 class="is-heading is-orange">Key pillars of Tamiat</h3>
 
       <ul class="quote-box" v-if="reviews">
         <li v-for="review in reviews" :key="review['.key']">
+          <p class="author" v-text="review.author"></p>
           <p class="quote" v-text="review.description"></p>
           <img :src="review.img" :alt="review.author">
-          <p class="author" v-text="review.author"></p>
         </li>
       </ul>
     </div>
@@ -55,7 +55,7 @@ export default {
       @include border-radius(5px);
       box-shadow: 0px 0px 9px 0px lightgray;
       p {
-        text-align: left;
+        text-align: center;
       }
       p.quote {
         min-height: 180px;
@@ -64,6 +64,8 @@ export default {
       .author {
         color: #000000;
         font-weight: 700;
+        font-size: 24px;
+        padding-bottom: 15px;
       }
     }
   }

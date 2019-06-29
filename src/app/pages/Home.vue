@@ -19,9 +19,9 @@
       </div>
     </section>
 
-    <section-work></section-work>
-
     <section-service></section-service>
+
+    <section-work></section-work>
 
     <section-review></section-review>
 

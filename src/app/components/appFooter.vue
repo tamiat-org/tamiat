@@ -8,7 +8,7 @@
 
         <div class="content">
           <h3 class="is-heading">Join our newsletter</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+          <p>For latest updates regarding Tamiat join our newsletter.</p>
 
           <div class="alert-subscription" v-if="isSubscribed">
             Thanks for your subscription.
