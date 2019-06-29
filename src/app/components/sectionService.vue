@@ -2,7 +2,7 @@
   <section class="features bg-blue">
     <div class="container">
       <h3 class="is-heading">Features and services</h3>
-      <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+      <p class="info">Tamiat is a frontend CMS Offering great content management and page routing of a website. Create the content you want, exactly how you want it, with as many templates and content fields as you can create. Unleash creativity.</p>
       <ul class="grid" v-if="services">
         <li v-for="service in services" :key="service['.key']">
           <i v-if="service.icon" :class="service.icon"></i>

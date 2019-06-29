@@ -1,8 +1,8 @@
 <template>
   <section class="our-work">
     <div class="container">
-      <h3 class="is-heading">Some of our work</h3>
-      <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+      <h3 class="is-heading">Simple and clean interface</h3>
+      <p class="info">Tamiat CMS offers easy and simple UI for its users when creating or editing their content, as well as an intuitive way of creating fully customisable pages for anything a developer could need</p>
       <ul class="grid" v-if="works">
         <li v-for="work in works" :key="work['.key']" class="small" :style="{'background-image': `url(${work.img})`}"></li>
       </ul>
@@ -43,11 +43,12 @@ export default {
   .grid {
     padding: 60px 0 20px 0;
     li {
-      padding: 10px;
-      height: 350px;
+      padding: 5px;
+      height: 400px;
       border-radius: 3px;
       background-clip: content-box;
-      background-size: cover;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
       background-position: center;
       background-color: #333;
       &.small {
