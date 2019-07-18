@@ -4,10 +4,10 @@
       <h3 class="is-heading">Simple and clean interface</h3>
       <p class="info">Tamiat CMS offers easy and simple UI for its users when creating or editing their content, as well as an intuitive way of creating fully customisable pages for anything a developer could need</p>
       <ul class="grid" v-if="works">
-        <li v-for="work in works" :key="work['.key']" class="small" :style="{'background-image': `url(${work.img})`}"></li>
+        <li v-for="work in works" :key="work['.key']" :class="[ work.title === 'Work 3' ? 'small' : 'large']" :style="{'background-image': `url(${work.img})`}"></li>
       </ul>
     </div>
-  </section>
+  </section> 
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
     works () {
       return this.getContentsByType('Works')
     }
-  }
+  }//  
 }
 </script>
 
@@ -43,19 +43,20 @@ export default {
   .grid {
     padding: 60px 0 20px 0;
     li {
-      padding: 5px;
+      padding: 10px;
       height: 400px;
       border-radius: 3px;
       background-clip: content-box;
       background-size: 100% auto;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: #333;
+      border-style: solid;
+      margin: 5px;
       &.small {
         flex-basis: 40%;
       }
       &.large {
-        flex-basis: 60%;
+        flex-basis: 55%;
       }
     }
   }
