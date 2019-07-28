@@ -41,8 +41,8 @@
             </div>
             <div class="column">
               <!--area to delete options-->
-              <div v-for="(option, optionKey) in content[field.name.options]" :key="optionKey" >
-                <span @click="removeTag(optionKey, field.name.options)" class="tag is-info pointer">{{option}}
+              <div v-for="(option, optionKey) in content[field.name].options" :key="optionKey" >
+                <span @click="removeTag(optionKey, field.name, true)" class="tag is-info pointer">{{option}}
                 <button class="delete is-small"></button>
               </span>
               </div>
@@ -232,21 +232,26 @@ export default {
         this.inputData = ''
       }
     },
-    removeTag (index, fieldName) {
-      // function to remove tags and options
+    removeTag (index, fieldName, isSelect) {
+       // function to remove tags and options
       // cloning object (to make Vue reactive)
       let currentContent = Object.assign({}, this.content)
-      // delete element from arr
-      currentContent[fieldName].splice(index, 1)
+      if(isSelect) {
+        // delete element from select options
+        currentContent[fieldName].options.splice(index, 1)
+      } else {
+        // delete element from arr
+        currentContent[fieldName].splice(index, 1)
+      }
       // return cloned object Back
       this.content = Object.assign({}, currentContent)
     },
     updateBoolContent (fieldName) {
       if (this.booleanName !== '') {
-        if (!this.newContent[fieldName]) {
-          this.newContent[fieldName] = ''
+        if (!this.content[fieldName]) {
+          this.content[fieldName] = ''
         }
-        this.newContent[fieldName] = this.booleanName
+        this.content[fieldName] = this.booleanName
       }
     },
     // function to create Select Options from input area
@@ -258,7 +263,7 @@ export default {
         this.selectOptionsRow.split(',').forEach(tag => {
           this.select.options.push(`${tag.trim()}`)
         })
-        this.content[fieldName].options = [...this.content[fieldName].options, ...this.select.options]
+        this.content[fieldName].options ? [...this.content[fieldName].options, ...this.select.options] : [...this.select.options]
 
         this.selectOptionsRow = ''
       }
