@@ -7,7 +7,9 @@
         <li v-for="review in reviews" :key="review['.key']">
           <p class="author" v-text="review.author"></p>
           <p class="quote" v-text="review.description"></p>
-          <img :src="review.img" :alt="review.author">
+          <div>
+            <img :src="review.img" :alt="review.author">
+          </div>
         </li>
       </ul>
     </div>
@@ -54,6 +56,9 @@ export default {
       width: 33.33%;
       @include border-radius(5px);
       box-shadow: 0px 0px 9px 0px lightgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       p {
         text-align: center;
       }
@@ -67,6 +72,7 @@ export default {
         font-size: 24px;
         padding-bottom: 15px;
       }
+      
     }
   }
 }
