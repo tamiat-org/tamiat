@@ -8,8 +8,7 @@
           <p class="author" v-text="review.author"></p>
           <p class="quote" v-text="review.description"></p>
           <div>
-            <img class="picture" :src="review.img" :alt="review.author">
-            <p class="author" v-text="review.author"></p>
+            <img :src="review.img" :alt="review.author">
           </div>
         </li>
       </ul>
